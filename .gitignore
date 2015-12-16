@@ -1,0 +1,3 @@
+.submodules
+.toolchain.*
+xtensa-lx106-elf
