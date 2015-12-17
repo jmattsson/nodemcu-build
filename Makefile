@@ -1,6 +1,3 @@
-#TODO: specify this from the nodemcu-firmware build instead
-SDK_VERSION=1.5.0
-
 .PHONY: toolchain
 toolchain: .toolchain.$(SDK_VERSION)
 

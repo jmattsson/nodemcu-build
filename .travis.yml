@@ -1,0 +1,14 @@
+sudo: true
+dist: trusty
+language: c
+addons:
+  apt:
+    packages:
+      - libtool
+      - gperf
+      - flex
+      - bison
+      - texinfo
+      - gawk
+script:
+  - unset CC; unset LD; make SDK_VERSION=1.5.0
