@@ -1,12 +1,9 @@
-#TODO: specify this from the nodemcu-firmware build instead
-SDK_VERSION=1.5.0
-
 .PHONY: toolchain
 toolchain: .toolchain.$(SDK_VERSION)
 
 .toolchain.$(SDK_VERSION): esp-open-sdk/.cache_copied
 	sed -i -e 's/^#CT_STATIC_TOOLCHAIN=y/CT_STATIC_TOOLCHAIN=y/' esp-open-sdk/crosstool-config-overrides
-	$(MAKE) -j1 -C esp-open-sdk STANDALONE=n VENDOR_SDK=$(SDK_VERSION)
+	$(MAKE) -j1 -C esp-open-sdk STANDALONE=n VENDOR_SDK=$(SDK_VERSION) libhal
 	-rm -f .toolchain.*
 	touch $@
 
